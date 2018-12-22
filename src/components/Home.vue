@@ -87,17 +87,31 @@
     <consume
       @login="orderCenter"
       @logout="show"
+<<<<<<< HEAD
       :phone='$store.getters.getCurrentPhone'
     ></consume>
     <recommend :phone='$store.getters.getCurrentPhone'></recommend>
     <other-recommend></other-recommend>
+=======
+    ></consume>
+    <recommend></recommend>
+    <other-recommend></other-recommend>
+    <div class="more"></div>
+>>>>>>> a16eff8f2bdc54a51e59d88d7a561190698bd7ad
   </div>
 </template>
 
 <script>
+<<<<<<< HEAD
 import consume from "./sub/Consume.vue";
 import recommend from "./sub/Recommend.vue";
 import otherRecommend from "./sub/otherRecommend.vue";
+=======
+import consume from "./Consume.vue";
+import recommend from "./Recommend.vue";
+import otherRecommend from "./otherRecommend.vue";
+import home from "../assets/js/home.js";
+>>>>>>> a16eff8f2bdc54a51e59d88d7a561190698bd7ad
 
 export default {
   name: "HelloWorld",
@@ -108,6 +122,10 @@ export default {
   },
   data() {
     return {
+<<<<<<< HEAD
+=======
+      info: {},
+>>>>>>> a16eff8f2bdc54a51e59d88d7a561190698bd7ad
       showIcon: false,
       phone: "",
       warnMessage: "",
@@ -129,12 +147,18 @@ export default {
   },
   watch: {},
   created() {
+<<<<<<< HEAD
     //根据session中的phone值，判断是否设置vuex中的登录手机号。
+=======
+>>>>>>> a16eff8f2bdc54a51e59d88d7a561190698bd7ad
     if (sessionStorage.getItem("phone")) {
       // this.islogin = true;
       this.$store.commit("changeUserStatus", sessionStorage.getItem("phone"));
     }
+<<<<<<< HEAD
     //根据登录状态判断是否开始显示登录模态框。
+=======
+>>>>>>> a16eff8f2bdc54a51e59d88d7a561190698bd7ad
     if (this.islogin) {
       this.cancelLog = true;
     } else {
@@ -154,7 +178,11 @@ export default {
         this.warnMessage = "";
       } else {
         this.isPhone = false;
+<<<<<<< HEAD
         this.warnMessage = "请输入11位手机号！";
+=======
+        this.warnMessage = "请输入正确号码！";
+>>>>>>> a16eff8f2bdc54a51e59d88d7a561190698bd7ad
       }
     },
     getMsg() {
@@ -181,12 +209,15 @@ export default {
           console.log(res.data);
           console.log(res);
           console.log("验证码发送成功！");
+<<<<<<< HEAD
           if (res.data.code == -2) {
             this.Toast({
               message: res.data.msg,
               duration: 3000
             });
           }
+=======
+>>>>>>> a16eff8f2bdc54a51e59d88d7a561190698bd7ad
         });
       }
     },
@@ -198,11 +229,20 @@ export default {
         this.axios
           .post(url, `phone=${this.phone}&msg=${this.msg}`)
           .then(res => {
+<<<<<<< HEAD
             sessionStorage.setItem("phone", res.data[0].phone);
+=======
+            this.info = res.data[0];
+            sessionStorage.setItem("phone", this.info.phone);
+>>>>>>> a16eff8f2bdc54a51e59d88d7a561190698bd7ad
             this.$store.commit(
               "changeUserStatus",
               sessionStorage.getItem("phone")
             );
+<<<<<<< HEAD
+=======
+            // this.islogin = true;
+>>>>>>> a16eff8f2bdc54a51e59d88d7a561190698bd7ad
             this.cancelLog = true;
             this.isPhone = false;
           });
@@ -225,8 +265,13 @@ export default {
       this.msg = "";
       this.showIcon = false;
       if (this.islogin) {
+<<<<<<< HEAD
         //转到订单中心
         this.$router.push("/orderCenter");
+=======
+        console.log("还是登录的哦");
+        //转到订单中心
+>>>>>>> a16eff8f2bdc54a51e59d88d7a561190698bd7ad
       } else {
         this.cancelLog = false;
       }
@@ -240,7 +285,10 @@ export default {
       this.phone = "";
       this.msg = "";
       this.showIcon = false;
+<<<<<<< HEAD
       location.reload();
+=======
+>>>>>>> a16eff8f2bdc54a51e59d88d7a561190698bd7ad
     }
   }
 };
@@ -400,4 +448,13 @@ export default {
     transform: translateX(-100%)
     cursor: pointer
     z-index: 1
+<<<<<<< HEAD
+=======
+  .more
+    width: 11.5rem
+    height: 1.9rem
+    background: url('../assets/img/H5_button_img_13@2x.png') no-repeat 0 0 / cover
+    margin: 0 auto
+    cursor: pointer
+>>>>>>> a16eff8f2bdc54a51e59d88d7a561190698bd7ad
 </style>

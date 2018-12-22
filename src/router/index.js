@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
+<<<<<<< HEAD
 import orderCenter from '@/components/orderCenter'
 import allOrder from '@/components/order/allOrder'
 import successOrder from '@/components/order/successOrder'
@@ -9,6 +10,8 @@ import store from '@/components/store'
 import business from '@/components/business/business'
 import refresh from '@/components/refresh'
 import admin from '@/components/manager/admin'
+=======
+>>>>>>> a16eff8f2bdc54a51e59d88d7a561190698bd7ad
 
 
 Vue.use(Router)
@@ -21,6 +24,7 @@ export default new Router({
     {
       path: '/home',
       component: Home
+<<<<<<< HEAD
     },
     {
       path: '/orderCenter',
@@ -55,5 +59,9 @@ export default new Router({
       path: '/admin',
       component: admin
     }
+=======
+    }
+
+>>>>>>> a16eff8f2bdc54a51e59d88d7a561190698bd7ad
   ]
 })

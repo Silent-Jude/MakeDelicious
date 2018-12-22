@@ -6,6 +6,7 @@ import router from './router'
 import store from './vuex/store'
 import axios from 'axios'
 import qs from 'qs'
+<<<<<<< HEAD
 import Mint from 'mint-ui'
 
 import {
@@ -25,11 +26,19 @@ Vue.prototype.Toast = Toast;
 
 Vue.prototype.qs = qs;
 axios.defaults.baseURL = 'http://onekey.applinzi.com/';
+=======
+
+
+
+Vue.prototype.qs = qs;
+axios.defaults.baseURL = 'http://127.0.0.1:3005/';
+>>>>>>> a16eff8f2bdc54a51e59d88d7a561190698bd7ad
 axios.defaults.withCredentials = true;
 Vue.prototype.axios = axios;
 
 Vue.config.productionTip = false
 
+<<<<<<< HEAD
 
 Vue.filter('businessStatusFilter', function (val) {
   if (val) {
@@ -42,6 +51,8 @@ Vue.filter('getInteger', function (val) {
   return Math.ceil(val);
 })
 
+=======
+>>>>>>> a16eff8f2bdc54a51e59d88d7a561190698bd7ad
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
